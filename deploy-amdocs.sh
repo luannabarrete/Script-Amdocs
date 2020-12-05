@@ -45,7 +45,13 @@ if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 fi
 
-git clone https://github.com/luannabarrete/nginx.conf.git /root/
+#Validar a existencia do arquivo nginx.conf no seguinte repositório:
+if ls /root/project/nginx.conf
+        then mv /root/project/nginx.conf/nginx.conf /etc/nginx/nginx.conf
+        
+        else
+                git clone https://github.com/luannabarrete/nginx.conf.git /root/project/nginx.conf
+                mv /root/project/nginx.conf/nginx.conf /etc/nginx/nginx.conf
 
 echo "______________________________________________________\n"
 
