@@ -52,6 +52,7 @@ if ls /root/project/nginx.conf/nginx.conf
         else
                 git clone https://github.com/luannabarrete/nginx.conf.git /root/project/nginx.conf
                 mv /root/project/nginx.conf/nginx.conf /etc/nginx/nginx.conf
+fi
 
 echo "______________________________________________________\n"
 
