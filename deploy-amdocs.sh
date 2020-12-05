@@ -7,7 +7,7 @@ if ls /usr/share/nginx/dox
         then
                 echo "______________________________________________________\n______________________________________________________\n\nO repositório já foi clonado.\n______________________________________________________\n______________________________________________________\n"
         else
-                git clone https://github.com/uknbr/dox.git /usr/share/nginx/ && echo "______________________________________________________\n______________________________________________________\nReposistório clonado com sucesso!"
+                git clone https://github.com/uknbr/dox.git /usr/share/nginx/dox && echo "______________________________________________________\n______________________________________________________\nReposistório clonado com sucesso!"
 fi
 
 # !!! DEPLOY COM NGINX !!!
@@ -44,6 +44,8 @@ if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
         else echo ""
 
 fi
+
+git clone https://github.com/luannabarrete/nginx.conf.git /root/
 
 echo "______________________________________________________\n"
 
