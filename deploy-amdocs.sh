@@ -1,42 +1,42 @@
 #!/bin/bash
 
-#Comando if para validar se o repositório já existe, ou seja, se já foi clonado para o diretório local. Caso não tenha sido clonado, isto é feito.
+#Command to validate if the repository already exists, that is, if it has already been cloned to the local directory. If it has not been cloned, this is done.
 
 if ls /usr/share/nginx/dox
 
         then
-                echo "______________________________________________________\n______________________________________________________\n\nO repositório já foi clonado.\n______________________________________________________\n______________________________________________________\n"
+                echo "______________________________________________________\n______________________________________________________\n\nThe repository has already been cloned.\n______________________________________________________\n______________________________________________________\n"
         else
                 git clone https://github.com/uknbr/dox.git /usr/share/nginx/dox && echo "______________________________________________________\n______________________________________________________\nReposistório clonado com sucesso!"
 fi
 
 # !!! DEPLOY COM NGINX !!!
 
-# Se for encontrado o arquivo de configuração...
+# If the configuration file is found...
 if ls /etc/nginx/sites-available/infratest.com
 
-# ...então nada...
+# ...so nothing...
         then
-                echo "\n'infratest.com' já se encontra no diretório.\n______________________________________________________\n"
+                echo "\n'infratest.com' is already in the directory.\n______________________________________________________\n"
 
-# ...senão verifique a existência do repositório "infratest". Se existir, somente mova-o para o diretório correto, senão faça um git clone dele e mova o arquivo para o diretório correto. Após isto crie um arquivo idêntico em /etc/nginx/sites-enabled/ e estabeleça um link entre os dois.
+# ...otherwise check for the existence of the "infratest" repository. If it exists, just move it to the correct directory, otherwise make a git clone of it and move the file to the correct directory. After that create an identical file in /etc/nginx/sites-enabled/ and establish a link between the two.
 
         elif ls /root/project/infratest
 
         then
                 mv /root/project/infratest/infratest.com /etc/nginx/sites-available/ &&
                 ln -s /etc/nginx/sites-available/infratest.com /etc/nginx/sites-enabled/infratest.com &&
-                echo "Arquivo de configuração movido com sucesso."
+                echo "Configuration file moved successfully."
 
         else
 
                 git clone https://github.com/luannabarrete/infratest.git /root/project/infratest &&
                 mv /root/project/infratest/infratest.com /etc/nginx/sites-available/ &&
                 ln -s /etc/nginx/sites-available/infratest.com /etc/nginx/sites-enabled/infratest.com &&
-                echo "Arquivo de configuração clonado e movido com sucesso."
+                echo "Configuration file cloned and moved successfully."."
 fi
 
-#Excluir os arquivos Default:
+#Delete default files:
 if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
         then rm /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
@@ -45,7 +45,7 @@ if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
 fi
 
-#Validar a existencia do arquivo nginx.conf no seguinte repositório:
+#Validate the existence of nginx.conf file:
 if ls /root/project/nginx.conf/nginx.conf
         then mv /root/project/nginx.conf/nginx.conf /etc/nginx/nginx.conf
         
@@ -56,6 +56,6 @@ fi
 
 echo "______________________________________________________\n"
 
-# Reiniciar o serviço do Nginx e exibir seus status logo apó.
+# Restart the Nginx service and display its status right after.
 sudo systemctl restart nginx;
 sudo systemctl status nginx;
