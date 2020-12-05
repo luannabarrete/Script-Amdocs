@@ -46,7 +46,7 @@ if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 fi
 
 #Validar a existencia do arquivo nginx.conf no seguinte repositório:
-if ls /root/project/nginx.conf
+if ls /root/project/nginx.conf/nginx.conf
         then mv /root/project/nginx.conf/nginx.conf /etc/nginx/nginx.conf
         
         else
