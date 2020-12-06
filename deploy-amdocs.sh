@@ -2,7 +2,7 @@
 
 # Installing Nginx on Ubuntu:
 
-if ls /etc/nginx
+if ls /etc/nginx > /dev/null
 
         then
                 echo "__________________________________\n\nNGINX is already installed.\n__________________________________"
@@ -17,7 +17,7 @@ fi
 
 #Command to validate if the repository already exists. If it has not been cloned, that is done.
 
-if ls /usr/share/nginx/dox
+if ls /usr/share/nginx/dox > /dev/null
 
         then
                 echo "______________________________________________________\n______________________________________________________\n\nThe repository has already been cloned.\n______________________________________________________\n______________________________________________________\n"
@@ -28,7 +28,7 @@ fi
 # !!! DEPLOY WITH NGINX !!!
 
 # If the configuration file is found...
-if ls /etc/nginx/sites-available/infratest.com
+if ls /etc/nginx/sites-available/infratest.com > /dev/null
 
 # ...so display that it is already in the directory...
         then
@@ -36,7 +36,7 @@ if ls /etc/nginx/sites-available/infratest.com
 
 # ...otherwise check for the existence of the "infratest" repository. If it exists, just move it to the correct directory, otherwise make a git clone of it and move the file to the correct directory. After that create an identical file in /etc/nginx/sites-enabled/ and establish a link between the two.
 
-        elif ls /root/project/infratest
+        elif ls /root/project/infratest > /dev/null
 
         then
                 mv /root/project/infratest/infratest.com /etc/nginx/sites-available/ &&
