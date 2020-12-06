@@ -36,17 +36,17 @@ if ls /etc/nginx/sites-available/infratest.com
                 echo "Configuration file cloned and moved successfully."."
 fi
 
-#Delete default files:
+# Delete default files:
 if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 
         then rm /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-
+        
         else echo ""
-
+        
 fi
-
 #Validate the existence of nginx.conf file:
 if ls /root/project/nginx.conf/nginx.conf
+
         then mv /root/project/nginx.conf/nginx.conf /etc/nginx/nginx.conf
         
         else
@@ -59,5 +59,3 @@ echo "______________________________________________________\n"
 # Restart the Nginx service and display its status right after.
 sudo systemctl restart nginx;
 sudo systemctl status nginx;
-
-# Validate site status
