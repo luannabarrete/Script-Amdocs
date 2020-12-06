@@ -61,4 +61,3 @@ sudo systemctl restart nginx;
 sudo systemctl status nginx;
 
 # Validate site status
-
