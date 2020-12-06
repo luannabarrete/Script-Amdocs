@@ -33,7 +33,7 @@ if ls /etc/nginx/sites-available/infratest.com
                 git clone https://github.com/luannabarrete/infratest.git /root/project/infratest &&
                 mv /root/project/infratest/infratest.com /etc/nginx/sites-available/ &&
                 ln -s /etc/nginx/sites-available/infratest.com /etc/nginx/sites-enabled/infratest.com &&
-                echo "Configuration file cloned and moved successfully."."
+                echo "Configuration file cloned and moved successfully."
 fi
 
 # Delete default files:
