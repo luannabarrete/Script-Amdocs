@@ -15,7 +15,7 @@ if ls /etc/nginx
 fi                
 
 
-#Command to validate if the repository already exists, that is, if it has already been cloned to the local directory. If it has not been cloned, this is done.
+#Command to validate if the repository already exists. If it has not been cloned, that is done.
 
 if ls /usr/share/nginx/dox
 
@@ -25,12 +25,12 @@ if ls /usr/share/nginx/dox
                 git clone https://github.com/uknbr/dox.git /usr/share/nginx/dox && echo "______________________________________________________\n______________________________________________________\nReposistório clonado com sucesso!"
 fi
 
-# !!! DEPLOY COM NGINX !!!
+# !!! DEPLOY WITH NGINX !!!
 
 # If the configuration file is found...
 if ls /etc/nginx/sites-available/infratest.com
 
-# ...so nothing...
+# ...so display that it is already in the directory...
         then
                 echo "\n'infratest.com' is already in the directory.\n______________________________________________________\n"
 
