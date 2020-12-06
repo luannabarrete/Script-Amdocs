@@ -5,12 +5,12 @@
 if ls /etc/nginx > /dev/null
 
         then
-                echo "__________________________________\n\nNGINX is already installed.\n"
+                echo "_________________________________________________________\n\nNGINX is already installed."
                 
         else
         
                 sudo apt install nginx -y &&
-                echo "__________________________________\n\nNGINX installed successfully.\n__________________________________"
+                echo "_________________________________________________________\n\nNGINX installed successfully.\n_________________________________________________________\n"
                 
 fi                
 
@@ -20,9 +20,9 @@ fi
 if ls /usr/share/nginx/dox > /dev/null
 
         then
-                echo "______________________________________________________\n______________________________________________________\n\nThe repository 'dox' already exists in /usr/share/nginx.\n______________________________________________________\n"
+                echo "_________________________________________________________\n\nThe repository 'dox' already exists in /usr/share/nginx.\n______________________________________________________\n"
         else
-                git clone https://github.com/uknbr/dox.git /usr/share/nginx/dox && echo "______________________________________________________\n______________________________________________________\nThe repository 'dox' has been successfully cloned!\n______________________________________________________\n"
+                git clone https://github.com/uknbr/dox.git /usr/share/nginx/dox && echo "_________________________________________________________\n_________________________________________________________\nThe repository 'dox' has been successfully cloned!\n______________________________________________________\n"
 fi
 
 # !!! DEPLOY WITH NGINX !!!
