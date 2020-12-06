@@ -10,7 +10,7 @@ if ls /etc/nginx > /dev/null
         else
         
                 sudo apt install nginx -y &&
-                echo "_________________________________________________________\n\nNGINX installed successfully.\n_________________________________________________________\n"
+                echo "_________________________________________________________\n\nNGINX installed successfully.\n"
                 
 fi                
 
@@ -20,9 +20,9 @@ fi
 if ls /usr/share/nginx/dox > /dev/null
 
         then
-                echo "_________________________________________________________\n\nThe repository 'dox' already exists in /usr/share/nginx.\n______________________________________________________\n"
+                echo "_________________________________________________________\n\nThe repository 'dox' already exists in /usr/share/nginx.\n_________________________________________________________\n"
         else
-                git clone https://github.com/uknbr/dox.git /usr/share/nginx/dox && echo "_________________________________________________________\n_________________________________________________________\nThe repository 'dox' has been successfully cloned!\n______________________________________________________\n"
+                git clone https://github.com/uknbr/dox.git /usr/share/nginx/dox && echo "_________________________________________________________\nThe repository 'dox' has been successfully cloned to /usr/share/nginx!\n______________________________________________________\n"
 fi
 
 # !!! DEPLOY WITH NGINX !!!
@@ -52,7 +52,7 @@ if ls /etc/nginx/sites-available/infratest.com > /dev/null
 fi
 
 # Delete default files:
-if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default > /dev/null
 
         then rm /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
         
@@ -60,12 +60,12 @@ if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
         
 fi
 #Validate the existence of nginx.conf file:
-if ls /root/project/nginx.conf/nginx.conf
+if ls /root/project/nginx.conf/nginx.conf > /dev/null
 
         then mv /root/project/nginx.conf/nginx.conf /etc/nginx/nginx.conf
         
         else
-                git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/
+                git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/nginx.conf
                 mv -f /root/project/config-file-nginx/nginx.conf /etc/nginx/
 fi
 
