@@ -1,7 +1,18 @@
 #!/bin/bash
 
-# Installing Nginx on any distibution
-sudo apt install nginx -y || sudo amazon-linux-extras install nginx1 -y || sudo yum install nginx -y || sudo dnf install nginx -y
+# Installing Nginx on Ubuntu:
+
+if ls /etc/nginx
+
+        then
+                echo "__________________________________\n\nNGINX is already installed.\n__________________________________"
+                
+        else
+        
+                sudo apt install nginx -y &&
+                echo "__________________________________\n\nNGINX installed successfully.\n__________________________________"
+                
+fi                
 
 
 #Command to validate if the repository already exists, that is, if it has already been cloned to the local directory. If it has not been cloned, this is done.
