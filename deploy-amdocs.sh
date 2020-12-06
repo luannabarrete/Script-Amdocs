@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Installing Nginx on any distibution
+sudo apt install nginx || sudo amazon-linux-extras install nginx1 || sudo yum install nginx || sudo dnf install nginx
+
+
 #Command to validate if the repository already exists, that is, if it has already been cloned to the local directory. If it has not been cloned, this is done.
 
 if ls /usr/share/nginx/dox
