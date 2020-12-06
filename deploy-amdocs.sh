@@ -75,4 +75,4 @@ if curl localhost:8080 | "\
         
         else 
                 echo -e "__________________________\nTHE SITE IS DOWN!!!\n__________________________\n"
-fi                
+fi
