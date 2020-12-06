@@ -32,7 +32,7 @@ if ls /etc/nginx/sites-available/infratest.com > /dev/null
 
 # ...so display that it is already in the directory...
         then
-                echo "\n'infratest.com' is already in the directory.\n______________________________________________________\n"
+                echo "\nThe configuration file 'infratest.com' is already in /etc/nginx/sites-available/ and /etc/nginx/sites-enabled/.\n______________________________________________________\n"
 
 # ...otherwise check for the existence of the "infratest" repository. If it exists, just move it to the correct directory, otherwise make a git clone of it and move the file to the correct directory. After that create an identical file in /etc/nginx/sites-enabled/ and establish a link between the two.
 
@@ -69,7 +69,7 @@ if ls /root/project/nginx.conf/nginx.conf
                 mv -f /root/project/config-file-nginx/nginx.conf /etc/nginx/
 fi
 
-echo "______________________________________________________\n"
+echo "_________________________________________________________\n"
 
 # Restart the Nginx service and display its status right after.
 sudo systemctl restart nginx;
