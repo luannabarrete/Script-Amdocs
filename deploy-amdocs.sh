@@ -2,7 +2,7 @@
 
 # Installing Nginx on Ubuntu:
 
-if ls /etc/nginx > /dev/null
+if ls /etc/nginx > /dev/null 2>&1
 
         then
                 echo "_________________________________________________________\n\nNGINX is already installed."
@@ -17,7 +17,7 @@ fi
 
 #Command to validate if the repository already exists. If it has not been cloned, that is done.
 
-if ls /usr/share/nginx/dox > /dev/null
+if ls /usr/share/nginx/dox > /dev/null 2>&1
 
         then
                 echo "_________________________________________________________\n\nThe repository 'dox' already exists in /usr/share/nginx.\n_________________________________________________________\n"
@@ -28,7 +28,7 @@ fi
 # !!! DEPLOY WITH NGINX !!!
 
 # If the configuration file is found...
-if ls /etc/nginx/sites-available/infratest.com > /dev/null
+if ls /etc/nginx/sites-available/infratest.com > /dev/null 2>&1
 
 # ...so display that it is already in the directory...
         then
@@ -52,7 +52,7 @@ if ls /etc/nginx/sites-available/infratest.com > /dev/null
 fi
 
 # Delete default files:
-if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default > /dev/null
+if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default > /dev/null 2>&1
 
         then rm /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
         
@@ -60,7 +60,7 @@ if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default > /dev
         
 fi
 #Validate the existence of nginx.conf file:
-if ls /root/project/config-file-nginx/nginx.conf > /dev/null
+if ls /root/project/config-file-nginx/nginx.conf > /dev/null 2>&1
 
         then mv -f /root/project/nginx.conf/nginx.conf /etc/nginx/nginx.conf
         
@@ -75,7 +75,7 @@ echo "_________________________________________________________\n"
 systemctl restart nginx;
 systemctl status nginx;
 
-if curl localhost:8080 > /dev/null
+if curl localhost:8080 > /dev/null 2>&1
 
         then
                 echo "\n
