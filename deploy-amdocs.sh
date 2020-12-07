@@ -71,7 +71,7 @@ if ls /root/project/config-file-nginx/nginx.conf > /dev/null 2>&1
                 rm -fr /root/project/config-file-nginx/
                 git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/ > /dev/null 2>&1 &&
                 echo "\n\nThe configuration file has been cloned successfully!\n\n"
-                mv -f /root/project/config-file-nginx/nginx.conf/nginx.conf/ /etc/nginx/nginx.conf
+                mv -f /root/project/config-file-nginx/nginx.conf/nginx.conf /etc/nginx/nginx.conf
                 git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/ > /dev/null 2>&1
 fi
 
