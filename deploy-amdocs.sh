@@ -60,18 +60,17 @@ if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default > /dev
         
 fi
 
-#Validate the existence of nginx.conf file:
+#Validate the existence of nginx.conf file and moving it to /etc/nginx/:
 if ls /root/project/config-file-nginx/nginx.conf > /dev/null 2>&1
 
         then 
-                mv -f /root/project/config-file-nginx/nginx.conf /etc/nginx/nginx.conf
-                echo "\n\n\nERRO\n\n\n!"
+                echo "\nThe repository already exists in /root/project/config-file-nginx/.\n"
         
         else
-                rm -fr /root/project/config-file-nginx/
                 git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/ > /dev/null 2>&1 &&
                 echo "\n\nThe configuration file has been cloned successfully!\n\n"
                 mv -f /root/project/config-file-nginx/nginx.conf /etc/nginx/nginx.conf
+                echo "\nFile moved to /etc/nginx/ successfully!\n"
                 rm -f /root/project/config-file-nginx/
                 git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/ > /dev/null 2>&1
 fi
