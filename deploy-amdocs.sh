@@ -9,7 +9,7 @@ if ls /etc/nginx > /dev/null
                 
         else
         
-                sudo apt install nginx -y &&
+                apt install nginx -y &&
                 echo "_________________________________________________________\n\nNGINX installed successfully.\n"
                 
 fi                
@@ -72,8 +72,8 @@ fi
 echo "_________________________________________________________\n"
 
 # Restart the Nginx service and display its status right after.
-sudo systemctl restart nginx;
-sudo systemctl status nginx;
+systemctl restart nginx;
+systemctl status nginx;
 
 if curl localhost:8080 > /dev/null
 
