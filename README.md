@@ -40,7 +40,7 @@ Instalar o Nginx no Ubuntu
 		
 
 
-	-- Agora testo no navegador: Endereço de IP:porta e DEU CERTO!!!
+	-- Agora testo no navegador: Endereço de IP:porta e o site está ONLINE!!!
 
 
 Agora que fiz o deploy, preciso criar um script para automatizar todo este processo.
