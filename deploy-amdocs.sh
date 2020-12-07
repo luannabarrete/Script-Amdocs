@@ -14,7 +14,7 @@ if ls /etc/nginx > /dev/null 2>&1
 fi                
 
 
-#Command to validate if the repository already exists. If it has not been cloned, that is done.
+#To validate if the repository already exists. If it has not been cloned, that is done.
 
 if ls /usr/share/nginx/dox > /dev/null 2>&1
 
@@ -61,15 +61,15 @@ if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default > /dev
 fi
 
 #Validate the existence of nginx.conf file and moving it to /etc/nginx/:
-if ls /root/project/config-file-nginx/nginx.conf > /dev/null 2>&1
+if ls /root/project/config-file-nginx/ /etc/nginx/nginx.conf > /dev/null 2>&1
 
     then 
-        echo "The repository 'config-file-nginx' already exists in /root/project/.\n"
-        
+        echo "The repository 'config-file-nginx' already exists in /root/project/ and was moved to /etc/nginx/.\n"
+               
     else
         rm -fr /root/project/config-file-nginx/
         git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/ > /dev/null 2>&1 &&
-        echo "The configuration file has been cloned successfully!\n"
+        echo "The repository with the configuration file has been cloned successfully!\n"
         mv -f /root/project/config-file-nginx/nginx.conf /etc/nginx/
         echo "\nConfiguration file 'nginx.conf' moved to /etc/nginx/ successfully!\n"
         rm -fr /root/project/config-file-nginx/
