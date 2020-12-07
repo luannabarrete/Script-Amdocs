@@ -6,19 +6,15 @@ Instalar o Nginx no Ubuntu
 
 1. Clonar o repositório do git no Ubuntu
 
-		-- faço um git clone no diretório /usr/share/nginx/.
-			--- o arquivo amdocs.html está agora em /usr/share/nginx/dox/
+	-- faço um git clone no diretório /usr/share/nginx/.
+		--- o arquivo amdocs.html está agora em /usr/share/nginx/dox/
 
- $ git clone https://github.com/uknbr/dox.git /usr/share/nginx/
-
-
+			$ git clone https://github.com/uknbr/dox.git /usr/share/nginx/
 
 2. Desejo: Fazer deploy do .html com o Nginx
 
 	- Preciso saber como direcionar o Nginx para o arquivo HTML, configurando o caminho do mesmo no Nginx.
-
 	- Pesquisando sobre o Nginx
-
 	- configurando o Nginx
 
 		-- Removo os arquivos de configuração Default e crio um arquivo de configuração:
@@ -26,7 +22,7 @@ Instalar o Nginx no Ubuntu
 		-- Atribuo o seguinte texto a ele, configurando o site na porta 8080:
 
 
-		"server {
+"server {
     listen 80 default_server;
 
     root /usr/share/nginx/example.com;
@@ -45,8 +41,8 @@ Instalar o Nginx no Ubuntu
 		
 
 
-		-- Agora testo no navegador: Endereço de IP:porta e DEU CERTO!!!
+	-- Agora testo no navegador: Endereço de IP:porta e DEU CERTO!!!
 
 
-	Agora que fiz o deploy, preciso criar um script para automatizar todo este processo.
+Agora que fiz o deploy, preciso criar um script para automatizar todo este processo.
 
