@@ -22,7 +22,7 @@ Instalar o Nginx no Ubuntu
 	- configurando o Nginx
 
 		-- Removo os arquivos de configuração Default e crio um arquivo de configuração:
-			$ vim /etc/nginx/sites-available/infratest.luan
+			$ vim /etc/nginx/sites-available/infratest.com
 		-- Atribuo o seguinte texto a ele, configurando o site na porta 8080:
 
 
@@ -45,7 +45,7 @@ Instalar o Nginx no Ubuntu
 		
 
 
-		-- Agora testo no navegador: Endereço de IP:porta (3.87.117.231:8080) e DEU CERTO!!!
+		-- Agora testo no navegador: Endereço de IP:porta e DEU CERTO!!!
 
 
 	Agora que fiz o deploy, preciso criar um script para automatizar todo este processo.
