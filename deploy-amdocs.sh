@@ -33,7 +33,7 @@ if ls /etc/nginx/sites-available/infratest.com > /dev/null 2>&1
 
     # ...so display that it is already in the directory...
     then
-        echo "\nThe configuration file 'infratest.com' is already in /etc/nginx/sites-available/ and /etc/nginx/sites-enabled/.\n______________________________________________________\n"
+        echo "The configuration file 'infratest.com' is already in /etc/nginx/sites-available/ and /etc/nginx/sites-enabled/.\n________________________________________________________________________________________________________________"
 
     # ...otherwise check for the existence of the "infratest" repository. If it exists, just move it to the correct directory, otherwise make a git clone of it and move the file to the correct directory. After that create an identical file in /etc/nginx/sites-enabled/ and establish a link between the two.
     elif ls /root/project/infratest/infratest.com ; cat /etc/nginx/sites-available/infratest.com | grep "amdocs.html" > /dev/null 2>&1
@@ -64,7 +64,7 @@ fi
 if ls /root/project/config-file-nginx/ > /dev/null 2>&1 ; cat /etc/nginx/nginx.conf | grep "Basic Settings" > /dev/null 2>&1
 
     then 
-        echo "The repository 'config-file-nginx' already exists in /root/project/ and was moved to /etc/nginx/.\n"
+        echo "The repository 'config-file-nginx' already exists in /root/project/ and was moved to /etc/nginx/."
                
     else
         rm -fr /root/project/config-file-nginx/
