@@ -36,19 +36,19 @@ if ls /etc/nginx/sites-available/infratest.com > /dev/null 2>&1
         echo "\nThe configuration file 'infratest.com' is already in /etc/nginx/sites-available/ and /etc/nginx/sites-enabled/.\n______________________________________________________\n"
 
     # ...otherwise check for the existence of the "infratest" repository. If it exists, just move it to the correct directory, otherwise make a git clone of it and move the file to the correct directory. After that create an identical file in /etc/nginx/sites-enabled/ and establish a link between the two.
-    elif ls /root/project/infratest > /dev/null
+    elif ls /root/project/infratest/infratest.com > /dev/null 2>&1
 
         then
-            mv /root/project/infratest/infratest.com /etc/nginx/sites-available/ &&
+            mv -f /root/project/infratest/infratest.com /etc/nginx/sites-available/ &&
             ln -s /etc/nginx/sites-available/infratest.com /etc/nginx/sites-enabled/infratest.com &&
-            echo "Configuration file moved successfully."
+            echo "Configuration file moved successfully to /etc/nginx/sites-available/."
 
         else
-
+            rm -fr /root/project/infratest/
             git clone https://github.com/luannabarrete/infratest.git /root/project/infratest &&
-            mv /root/project/infratest/infratest.com /etc/nginx/sites-available/ &&
+            mv -f /root/project/infratest/infratest.com /etc/nginx/sites-available/ &&
             ln -s /etc/nginx/sites-available/infratest.com /etc/nginx/sites-enabled/infratest.com &&
-            echo "Configuration file cloned and moved successfully."
+            echo "Configuration file cloned and moved successfully to /etc/nginx/sites-available/. Symbolic link has been established."
 fi
 
 # Delete default files:
