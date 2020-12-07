@@ -72,12 +72,15 @@ if ls /root/project/config-file-nginx/nginx.conf > /dev/null 2>&1
                 git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/ > /dev/null 2>&1 &&
                 echo "\n\nThe configuration file has been cloned successfully!\n\n"
                 mv -f /root/project/config-file-nginx/nginx.conf /etc/nginx/nginx.conf
+                rm -f /root/project/config-file-nginx/
                 git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/ > /dev/null 2>&1
 fi
 
 echo "_________________________________________________________\n"
 
 # Restart the Nginx service and display its status right after.
+
+
 
 if curl localhost:8080 > /dev/null 2>&1
 
@@ -92,7 +95,6 @@ if curl localhost:8080 > /dev/null 2>&1
 ██║  ██║██║ ╚═╝ ██║██████╔╝╚██████╔╝╚██████╗███████║
 ╚═╝  ╚═╝╚═╝     ╚═╝╚═════╝  ╚═════╝  ╚═════╝╚══════╝\n_________________________\n\nTHE SITE IS UP!!! :D\n_________________________\n"
         else    
-                systemctl status nginx
                 echo "\n_________________________\n\nTHE SITE IS DOWN!!! D:\n\nRestarting site...\n_________________________\n"
                 systemctl restart nginx
                 systemctl status nginx
