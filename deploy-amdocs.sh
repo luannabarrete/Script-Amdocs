@@ -77,8 +77,8 @@ fi
 echo "_________________________________________________________\n"
 
 # Restart the Nginx service and display its status right after.
-systemctl restart nginx;
-systemctl status nginx | grep "active";
+systemctl restart nginx
+systemctl status nginx
 
 if curl localhost:8080 > /dev/null 2>&1
 
