@@ -64,7 +64,7 @@ fi
 if ls /root/project/config-file-nginx/nginx.conf > /dev/null 2>&1
 
         then 
-                echo "\nThe repository already exists in /root/project/config-file-nginx/.\n"
+                echo "The repository 'config-file-nginx' already exists in /root/project/.\n"
         
         else
                 rm -fr /root/project/config-file-nginx/
@@ -76,7 +76,7 @@ if ls /root/project/config-file-nginx/nginx.conf > /dev/null 2>&1
                 git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/ > /dev/null 2>&1
 fi
 
-echo "_________________________________________________________\n"
+echo "________________________________________________________________________________________________________________\n"
 
 # Restart the Nginx service and display its status right after.
 
