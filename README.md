@@ -14,7 +14,6 @@ Instalar o Nginx no Ubuntu
 2. Desejo: Fazer deploy do .html com o Nginx
 
 	- Preciso saber como direcionar o Nginx para o arquivo HTML, configurando o caminho do mesmo no Nginx.
-	- Pesquisando sobre o Nginx
 	- configurando o Nginx
 
 		-- Removo os arquivos de configuração Default e crio um arquivo de configuração:
