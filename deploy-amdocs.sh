@@ -10,7 +10,7 @@ if ls /etc/nginx > /dev/null
         else
         
                 apt install nginx -y &&
-                echo "_________________________________________________________\n\nNGINX installed successfully.\n"
+                echo "_________________________________________________________\n\nNGINX installed successfully.\n_________________________________________________________\n"
                 
 fi                
 
