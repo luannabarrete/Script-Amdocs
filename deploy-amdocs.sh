@@ -67,6 +67,7 @@ if ls /root/project/config-file-nginx/nginx.conf > /dev/null 2>&1
                 echo "\nThe repository already exists in /root/project/config-file-nginx/.\n"
         
         else
+                rm -f /root/project/config-file-nginx/
                 git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/ > /dev/null 2>&1 &&
                 echo "The configuration file has been cloned successfully!\n_________________________________________________________\n"
                 mv -f /root/project/config-file-nginx/nginx.conf /etc/nginx/nginx.conf
