@@ -1,33 +1,31 @@
 # Script-Amdocs
 
-#Raciocínio
 
-Instalar o Nginx no Ubuntu
+Installing Nginx on Ubuntu
 
-1. Clonar o repositório do git no Ubuntu
+1. Cloning repository 'dox' with the html file to Ubuntu.
 
-	-- faço um git clone no diretório /usr/share/nginx/.
-		--- o arquivo amdocs.html está agora em /usr/share/nginx/dox/
+	-- Git clone to /usr/share/nginx/.
+		$ git clone https://github.com/uknbr/dox.git /usr/share/nginx/
+		--- the file 'amdocs.html' is now in /usr/share/nginx/
 
-			$ git clone https://github.com/uknbr/dox.git /usr/share/nginx/
 
-2. Desejo: Fazer deploy do .html com o Nginx
+2. Make deploy of amdocs.html with NGINX
 
-	- Preciso saber como direcionar o Nginx para o arquivo HTML, configurando o caminho do mesmo no Nginx.
-	- configurando o Nginx
+	- Direct Nginx to HTML file, configuring its path on Nginx.
 
-		-- Removo os arquivos de configuração Default e crio um arquivo de configuração:
+		-- Removing configuration files 'Default' and creating a new one.
 			$ vim /etc/nginx/sites-available/infratest.com
-		-- Atribuo o seguinte texto a ele, configurando o site na porta 8080:
+		-- Assigning the following text to it, configuring the site on port 8080:
 
 
 "server {
-    listen 80 default_server;
+    listen 8080 default_server;
 
     root /usr/share/nginx/example.com;
-    index index.php index.html index.htm;
+    index index.php index.html index.htm amdocs.html;
 
-    server_name example.com www.example.com;
+    server_name infratest.com www.infratest.com;
     location / {
         try_files $uri $uri/ /index.php;
     }
@@ -40,8 +38,6 @@ Instalar o Nginx no Ubuntu
 		
 
 
-	-- Agora testo no navegador: Endereço de IP:porta e o site está ONLINE!!!
+	-- Testing on browser: ip address:port (8080)!
 
-
-Agora que fiz o deploy, preciso criar um script para automatizar todo este processo.
-
+Automating this whole proccess in a script. 
