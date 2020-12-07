@@ -60,12 +60,12 @@ if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default > /dev
         
 fi
 #Validate the existence of nginx.conf file:
-if ls /root/project/nginx.conf/nginx.conf > /dev/null
+if ls /root/project/config-file-nginx/nginx.conf > /dev/null
 
-        then mv /root/project/nginx.conf/nginx.conf /etc/nginx/nginx.conf
+        then mv -f /root/project/nginx.conf/nginx.conf /etc/nginx/nginx.conf
         
         else
-                git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/nginx.conf
+                git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/config-file-nginx/
                 mv -f /root/project/config-file-nginx/nginx.conf /etc/nginx/
 fi
 
