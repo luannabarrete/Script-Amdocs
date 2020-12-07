@@ -14,12 +14,12 @@ Installing Nginx on Ubuntu
 
 	- Direct Nginx to HTML file, configuring its path on Nginx.
 
-		-- Removing configuration files 'Default' and creating a new one.
-			$ vim /etc/nginx/sites-available/infratest.com
-		-- Assigning the following text to it, configuring the site on port 8080:
+	-- Removing configuration files 'Default' and creating a new one.
+		$ vim /etc/nginx/sites-available/infratest.com
+	-- Assigning the following text to it, configuring the site on port 8080:
 
 
-"server {
+	"server {
     listen 8080 default_server;
 
     root /usr/share/nginx/example.com;
@@ -38,6 +38,6 @@ Installing Nginx on Ubuntu
 		
 
 
-	-- Testing on browser: ip address:port (8080)!
+-- Testing on browser: ip address:port (8080)!
 
 Automating this whole proccess in a script. 
