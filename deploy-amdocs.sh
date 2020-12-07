@@ -78,12 +78,11 @@ fi
 echo "_________________________________________________________\n"
 
 # Restart the Nginx service and display its status right after.
-systemctl restart nginx
-systemctl status nginx
 
 if curl localhost:8080 > /dev/null 2>&1
 
-        then
+        then    
+                systemctl status nginx
                 echo "\n
 
  █████╗ ███╗   ███╗██████╗  ██████╗  ██████╗███████╗
@@ -92,8 +91,10 @@ if curl localhost:8080 > /dev/null 2>&1
 ██╔══██║██║╚██╔╝██║██║  ██║██║   ██║██║     ╚════██║
 ██║  ██║██║ ╚═╝ ██║██████╔╝╚██████╔╝╚██████╗███████║
 ╚═╝  ╚═╝╚═╝     ╚═╝╚═════╝  ╚═════╝  ╚═════╝╚══════╝\n_________________________\n\nTHE SITE IS UP!!! :D\n_________________________\n"
-        else
-                echo "\n_________________________\n\nTHE SITE IS DOWN!!! D:\n_________________________\n"
-
+        else    
+                systemctl status nginx
+                echo "\n_________________________\n\nTHE SITE IS DOWN!!! D:\n\nRestarting site...\n_________________________\n"
+                systemctl restart nginx
+                systemctl status nginx
 fi
         
