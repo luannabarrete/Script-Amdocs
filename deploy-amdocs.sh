@@ -61,7 +61,7 @@ if ls /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default > /dev
 fi
 
 #Validate the existence of nginx.conf file and moving it to /etc/nginx/:
-if ls /root/project/config-file-nginx/ ; cat /etc/nginx/nginx.conf | grep "Basic Settings" > /dev/null 2>&1
+if ls /root/project/config-file-nginx/ > /dev/null 2>&1 ; cat /etc/nginx/nginx.conf | grep "Basic Settings" > /dev/null 2>&1
 
     then 
         echo "The repository 'config-file-nginx' already exists in /root/project/ and was moved to /etc/nginx/.\n"
