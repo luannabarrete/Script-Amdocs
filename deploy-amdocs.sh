@@ -65,7 +65,7 @@ if ls /root/project/config-file-nginx/nginx.conf > /dev/null 2>&1
         then mv -f /root/project/config-file-nginx/nginx.conf /etc/nginx/nginx.conf
         
         else
-                rm -f /root/project/config-file-nginx/
+                rm -fr /root/project/config-file-nginx/
                 git clone https://github.com/luannabarrete/config-file-nginx.git /root/project/
                 mv -f /root/project/config-file-nginx/nginx.conf /etc/nginx/
 fi
